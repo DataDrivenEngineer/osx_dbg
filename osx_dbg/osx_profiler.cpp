@@ -20,8 +20,7 @@ static void initMemProf()
 {
   port = mach_host_self();
   count = sizeof(vmStats) / sizeof(natural_t);
-  kern_return_t res = host_page_size(port, &pageSize);
-  if (res != KERN_SUCCESS)
+  if (kern_return_t res = host_page_size(port, &pageSize) != KERN_SUCCESS)
   {
     fprintf(stderr, "Failed to initialize memory profiler, error code: %d\n", res);
   }

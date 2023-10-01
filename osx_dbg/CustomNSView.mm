@@ -15,6 +15,8 @@
 #import "osx_renderer.h"
 #import "osx_profiler.h"
 
+#define PROFILING
+
 static CVDisplayLinkRef displayLink;
 static CAMetalLayer *layer;
 
@@ -36,8 +38,10 @@ void stopDisplayLink(void)
 
 static CVReturn renderCallback(CVDisplayLinkRef displayLink, const CVTimeStamp *inNow, const CVTimeStamp *inOutputTime, CVOptionFlags flagsIn, CVOptionFlags *flagsOut, void *displayLinkContext)
 {
+#ifdef PROFILING
   logFrameTime(inNow, inOutputTime);
   logMemory();
+#endif
   CVReturn error = [(__bridge CustomNSView *) displayLinkContext displayFrame:inOutputTime];
   return error;
 }
