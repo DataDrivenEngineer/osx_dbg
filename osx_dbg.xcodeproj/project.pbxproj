@@ -11,7 +11,10 @@
 		9F186D5F2AC68FB400DAE526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F186D5D2AC68FB400DAE526 /* Main.storyboard */; };
 		9F186D612AC68FB400DAE526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F186D602AC68FB400DAE526 /* main.m */; };
 		9F186D692AC6900B00DAE526 /* osx_dbg.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F186D522AC68FB300DAE526 /* osx_dbg.app */; };
-		9F6954BF2AC69BDE00FB3B75 /* CustomNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6954BE2AC69BDE00FB3B75 /* CustomNSView.m */; };
+		9F6954C32AC6B38F00FB3B75 /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F6954C22AC6B38100FB3B75 /* renderer.cpp */; };
+		9F6954C62AC6B3DC00FB3B75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6954C52AC6B3DC00FB3B75 /* Foundation.framework */; };
+		9F6954C82AC6B3E100FB3B75 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6954C72AC6B3E100FB3B75 /* QuartzCore.framework */; };
+		9F6954CA2AC6B3E600FB3B75 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6954C92AC6B3E600FB3B75 /* Metal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,8 +36,16 @@
 		9F186D5E2AC68FB400DAE526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F186D602AC68FB400DAE526 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F186D622AC68FB400DAE526 /* osx_dbg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = osx_dbg.entitlements; sourceTree = "<group>"; };
+		9F4017EF2AC74A07002091A4 /* osx_dbg.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = osx_dbg.mm; path = osx_dbg/osx_dbg.mm; sourceTree = "<group>"; };
+		9F4017F02AC74A07002091A4 /* osx_dbg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = osx_dbg.cpp; path = osx_dbg/osx_dbg.cpp; sourceTree = "<group>"; };
+		9F4017F12AC74A07002091A4 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = types.h; path = osx_dbg/types.h; sourceTree = "<group>"; };
 		9F6954BD2AC69BDE00FB3B75 /* CustomNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomNSView.h; path = osx_dbg/CustomNSView.h; sourceTree = "<group>"; };
-		9F6954BE2AC69BDE00FB3B75 /* CustomNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomNSView.m; path = osx_dbg/CustomNSView.m; sourceTree = "<group>"; };
+		9F6954C02AC6B36200FB3B75 /* CustomNSView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CustomNSView.mm; path = osx_dbg/CustomNSView.mm; sourceTree = "<group>"; };
+		9F6954C12AC6B38100FB3B75 /* renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = renderer.h; path = osx_dbg/renderer.h; sourceTree = "<group>"; };
+		9F6954C22AC6B38100FB3B75 /* renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = renderer.cpp; path = osx_dbg/renderer.cpp; sourceTree = "<group>"; };
+		9F6954C52AC6B3DC00FB3B75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9F6954C72AC6B3E100FB3B75 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9F6954C92AC6B3E600FB3B75 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6954C82AC6B3E100FB3B75 /* QuartzCore.framework in Frameworks */,
+				9F6954CA2AC6B3E600FB3B75 /* Metal.framework in Frameworks */,
+				9F6954C62AC6B3DC00FB3B75 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +65,16 @@
 		9F186D492AC68FB300DAE526 = {
 			isa = PBXGroup;
 			children = (
+				9F4017F02AC74A07002091A4 /* osx_dbg.cpp */,
+				9F4017EF2AC74A07002091A4 /* osx_dbg.mm */,
+				9F4017F12AC74A07002091A4 /* types.h */,
+				9F6954C22AC6B38100FB3B75 /* renderer.cpp */,
+				9F6954C12AC6B38100FB3B75 /* renderer.h */,
+				9F6954C02AC6B36200FB3B75 /* CustomNSView.mm */,
 				9F6954BD2AC69BDE00FB3B75 /* CustomNSView.h */,
-				9F6954BE2AC69BDE00FB3B75 /* CustomNSView.m */,
 				9F186D542AC68FB300DAE526 /* osx_dbg */,
 				9F186D532AC68FB300DAE526 /* Products */,
+				9F6954C42AC6B3DC00FB3B75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +95,16 @@
 				9F186D622AC68FB400DAE526 /* osx_dbg.entitlements */,
 			);
 			path = osx_dbg;
+			sourceTree = "<group>";
+		};
+		9F6954C42AC6B3DC00FB3B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F6954C92AC6B3E600FB3B75 /* Metal.framework */,
+				9F6954C72AC6B3E100FB3B75 /* QuartzCore.framework */,
+				9F6954C52AC6B3DC00FB3B75 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6954BF2AC69BDE00FB3B75 /* CustomNSView.m in Sources */,
+				9F6954C32AC6B38F00FB3B75 /* renderer.cpp in Sources */,
 				9F186D612AC68FB400DAE526 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,11 +316,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = osx_dbg/osx_dbg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$SRCROOT/include/metal-cpp";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -310,11 +342,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = osx_dbg/osx_dbg.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$SRCROOT/include/metal-cpp";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
